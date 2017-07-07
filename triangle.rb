@@ -14,7 +14,16 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  array = [a, b, c].sort
+  raise TriangleError if array.any? { |v| v <= 0 } || array[0] + array[1] <= array[2]
+
+  if array.uniq.size == 1
+    :equilateral
+  elsif array.uniq.size == 2
+    :isosceles
+  else
+    :scalene
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
