@@ -42,7 +42,7 @@ def score(dice)
     dice.delete(1)
   end
   
-  (2..9).each do |i|
+  (2..6).each do |i|
     if dice.count(i) >= 3
       sum += i * 100
       dice.shift(3)
